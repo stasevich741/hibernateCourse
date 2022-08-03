@@ -1,13 +1,13 @@
-package com.example.hibernatecourse.mapping_sets_lists;
+package com.example.hibernatecourse.mapping_collections.mapping_sortedSet;
 
-import com.example.hibernatecourse.mapping_sets_lists.entity.Student;
+import com.example.hibernatecourse.mapping_collections.mapping_sortedSet.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
+import java.util.Set;
 
-public class CreateStudentImageList {
+public class CreateStudentImageSet {
     public static void main(String[] args) {
         //create session factory
         try (SessionFactory factory = new Configuration()
@@ -18,14 +18,13 @@ public class CreateStudentImageList {
              Session session = factory.getCurrentSession()) {
 
             //create object
-            Student tempStudent = new Student("Ivan2", "Ivanov2", "ivan@mail.ru");
-            List<String> theImages = tempStudent.getImages();
+            Student tempStudent = new Student("Ivan", "Ivanov", "ivan@mail.ru");
+            Set<String> theImages = tempStudent.getImages();
 
             theImages.add("photo1.jpg");
             theImages.add("photo2.jpg");
             theImages.add("photo3.jpg");
             theImages.add("photo4.jpg");
-            theImages.add("photo4.jpg");//duple, filtered at java level by hashSet
             theImages.add("photo4.jpg");//duple, filtered at java level by hashSet
 
             //start transaction

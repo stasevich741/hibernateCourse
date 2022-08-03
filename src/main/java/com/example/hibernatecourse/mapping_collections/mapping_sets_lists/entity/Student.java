@@ -1,4 +1,4 @@
-package com.example.hibernatecourse.mapping_sets_lists.entity;
+package com.example.hibernatecourse.mapping_collections.mapping_sets_lists.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

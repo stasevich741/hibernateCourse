@@ -1,4 +1,4 @@
-package com.example.hibernatecourse.mapping_maps.entity;
+package com.example.hibernatecourse.mapping_collections.mapping_sortedSet.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,8 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -33,10 +33,10 @@ public class Student {
 
     @ElementCollection
     @CollectionTable(name = "image")
-    @MapKeyColumn(name = "file_name")
-    @Column(name = "image_name")
-//    private Set<String> images = new HashSet<>();
-    private Map<String, String> images = new HashMap<>();
+    @org.hibernate.annotations.OrderBy(clause = "file_name desc")//default asc
+    @Column(name = "file_name")
+    private Set<String> images = new LinkedHashSet<>();
+//    private List<String> images = new ArrayList<>();
 
     public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
