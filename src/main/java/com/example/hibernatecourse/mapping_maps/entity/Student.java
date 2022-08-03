@@ -1,4 +1,4 @@
-package com.example.hibernatecourse.mapping_sets_lists.entity;
+package com.example.hibernatecourse.mapping_maps.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,8 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -34,9 +34,9 @@ public class Student {
     @ElementCollection
     @CollectionTable(name = "image")
     @MapKeyColumn(name = "file_name")
-    @Column(name = "file_name")
+    @Column(name = "image_name")
 //    private Set<String> images = new HashSet<>();
-    private List<String> images = new ArrayList<>();
+    private Map<String, String> images = new HashMap<>();
 
     public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
