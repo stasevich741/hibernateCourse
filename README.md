@@ -1,4 +1,4 @@
-# notes from hibernate course
+notes and tips from hibernate course
 ____
 
 ## Описание разметки файла README.md
